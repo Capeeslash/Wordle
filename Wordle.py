@@ -1,5 +1,13 @@
 import random
 
+def start_game():
+    print("Welcome to Wordle!")
+    print("Your aim is to guess the 5 letter word within 6 tries")
+    print("If you guess the correct letter in the correct position it will display +")
+    print("If you guess the correct letter in the wrong position it will display ?")
+    print("If you guess the wrong letter in the wrong position it will display -")
+    print("\nGood luck!\n")
+
 def get_target_word(file_path='target_words.txt'):
     with open('target_words.txt') as f:
         words = f.readlines()
@@ -66,6 +74,7 @@ again = True
 total_attempts = 0
 successful_guess = 0
 while again:
+    start_game()
     target = get_target_word()
     attempt = 0
     while attempt < max_attempts:
